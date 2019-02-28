@@ -239,4 +239,4 @@ class Ra(Element, PeriodII, GroupII):
         return ()
 
 
-__all__ = ['GroupII', 'Be']
+__all__ = ['GroupII', 'Be', 'Mg', 'Ca', 'Sr', 'Ba', 'Ra']
