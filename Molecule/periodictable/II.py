@@ -51,7 +51,7 @@ class Be(Element, PeriodII, GroupII):
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1),
+        return (0, 1), (2, 1)
 
     @property
     def valences_exeptions(self):
@@ -85,7 +85,7 @@ class Mg(Element, PeriodIII, GroupII):
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1),
+        return (0, 1), (2, 1)
 
     @property
     def valences_exeptions(self):
@@ -119,7 +119,7 @@ class Ca(Element, PeriodIV, GroupII):
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1),
+        return (0, 1), (2, 1)
 
     @property
     def valences_exeptions(self):
@@ -153,7 +153,7 @@ class Sr(Element, PeriodV, GroupII):
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1),
+        return (0, 1), (2, 1)
 
     @property
     def valences_exeptions(self):
@@ -187,7 +187,7 @@ class Ba(Element, PeriodVI, GroupII):
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1),
+        return (0, 1), (2, 1)
 
     @property
     def valences_exeptions(self):
@@ -221,7 +221,7 @@ class Ra(Element, PeriodVII, GroupII):
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1),
+        return (0, 1), (2, 1)
 
     @property
     def valences_exeptions(self):
