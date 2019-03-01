@@ -199,4 +199,72 @@ class Xe(Element, PeriodV, GroupXVIII):
                (0, 3, ((1, 'F'), (1, 'F')))
 
 
-__all__ = ['GroupXVIII', 'He', 'Ne', 'Ar', 'Kr', 'Xe']
+class Rn(Element, PeriodVI, GroupXVIII):
+    @property
+    def atomic_number(self):
+        return 86
+
+    @property
+    def atomic_mass(self):
+        return 222.0176
+
+    @property
+    def electronegativity(self):
+        return 2.2
+
+    @property
+    def common_isotope(self):
+        return 222
+
+    @property
+    def max_isotope(self):
+        return 222
+
+    @property
+    def min_isotope(self):
+        return 222
+
+    @property
+    def common_valences(self):
+        return (0, 1),
+
+    @property
+    def valences_exeptions(self):
+        return ()
+
+
+class Og(Element, PeriodVII, GroupXVIII):
+    @property
+    def atomic_number(self):
+        return 118
+
+    @property
+    def atomic_mass(self):
+        return 294
+
+    @property
+    def electronegativity(self):
+        return None
+
+    @property
+    def common_isotope(self):
+        return 294
+
+    @property
+    def max_isotope(self):
+        return 294
+
+    @property
+    def min_isotope(self):
+        return 294
+
+    @property
+    def common_valences(self):
+        return (0, 1),
+
+    @property
+    def valences_exeptions(self):
+        return ()
+
+
+__all__ = ['GroupXVIII', 'He', 'Ne', 'Ar', 'Kr', 'Xe', 'Rn', 'Og']
