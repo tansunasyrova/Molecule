@@ -1,4 +1,4 @@
- # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
 #  This file is part of Molecule.

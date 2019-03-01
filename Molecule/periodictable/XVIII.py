@@ -25,7 +25,6 @@ class GroupXVIII:
 
 
 class He(Element, PeriodI, GroupXVIII):
-
     @property
     def atomic_number(self):
         return 2
@@ -44,7 +43,7 @@ class He(Element, PeriodI, GroupXVIII):
 
     @property
     def max_isotope(self):
-        return 10
+        return 4
 
     @property
     def min_isotope(self):
@@ -52,15 +51,14 @@ class He(Element, PeriodI, GroupXVIII):
 
     @property
     def common_valences(self):
-        return 0, 1
+        return (0, 1),
 
     @property
     def valences_exeptions(self):
         return ()
 
 
-class Ne(Element, PeriodI, GroupXVIII):
-
+class Ne(Element, PeriodII, GroupXVIII):
     @property
     def atomic_number(self):
         return 10
@@ -87,15 +85,14 @@ class Ne(Element, PeriodI, GroupXVIII):
 
     @property
     def common_valences(self):
-        return 0, 1
+        return (0, 1),
 
     @property
     def valences_exeptions(self):
         return ()
 
 
-class Ar(Element, PeriodI, GroupXVIII):
-
+class Ar(Element, PeriodIII, GroupXVIII):
     @property
     def atomic_number(self):
         return 18
@@ -122,15 +119,14 @@ class Ar(Element, PeriodI, GroupXVIII):
 
     @property
     def common_valences(self):
-        return 0, 1
+        return (0, 1),
 
     @property
     def valences_exeptions(self):
         return ()
 
 
-class Kr(Element, PeriodI, GroupXVIII):
-
+class Kr(Element, PeriodIV, GroupXVIII):
     @property
     def atomic_number(self):
         return 36
@@ -157,15 +153,14 @@ class Kr(Element, PeriodI, GroupXVIII):
 
     @property
     def common_valences(self):
-        return 0, 1
+        return (0, 1),
 
     @property
     def valences_exeptions(self):
         return ()
 
 
-class Xe(Element, PeriodI, GroupXVIII):
-
+class Xe(Element, PeriodV, GroupXVIII):
     @property
     def atomic_number(self):
         return 54
@@ -192,13 +187,16 @@ class Xe(Element, PeriodI, GroupXVIII):
 
     @property
     def common_valences(self):
-        return 0, 1
+        return (0, 1),
 
     @property
     def valences_exeptions(self):
-        return ((0, 3), ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'), (2, 'O')), (2, 'O')), ((0, 1), ((2,'O'), (2,'O'), (2,'O'))), \
-               ((0, 1),((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))), ((0, 1),((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))),\
-               ((0, 3), ((2, 'O'), (2, 'O'), (2, 'O'), (2, 'O'))), ((0, 3), ((1, 'F'), (1, 'F')))
+        return (0, 3, ((1, 'O'), (1, 'O'), (1, 'O'), (1, 'O'), (2, 'O')), (2, 'O')),\
+               (0, 1, ((2,'O'), (2,'O'), (2,'O'))), \
+               (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))),\
+               (0, 1, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))),\
+               (0, 3, ((2, 'O'), (2, 'O'), (2, 'O'), (2, 'O'))),\
+               (0, 3, ((1, 'F'), (1, 'F')))
 
 
-__all__ = ['GroupXVIII', 'He']
+__all__ = ['GroupXVIII', 'He', 'Ne', 'Ar', 'Kr', 'Xe']
