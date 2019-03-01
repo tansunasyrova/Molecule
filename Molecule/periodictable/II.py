@@ -25,7 +25,6 @@ class GroupII:
 
 
 class Be(Element, PeriodII, GroupII):
-
     @property
     def atomic_number(self):
         return 4
@@ -44,24 +43,22 @@ class Be(Element, PeriodII, GroupII):
 
     @property
     def max_isotope(self):
-        return 16
+        return 10
 
     @property
     def min_isotope(self):
-        return 5
+        return 7
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1)
+        return (0, 1), (2, 1),
 
     @property
     def valences_exeptions(self):
         return ()
 
 
-
-class Mg(Element, PeriodII, GroupII):
-
+class Mg(Element, PeriodIII, GroupII):
     @property
     def atomic_number(self):
         return 12
@@ -80,24 +77,22 @@ class Mg(Element, PeriodII, GroupII):
 
     @property
     def max_isotope(self):
-        return 40
+        return 28
 
     @property
     def min_isotope(self):
-        return 19
+        return 24
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1)
+        return (0, 1), (2, 1),
 
     @property
     def valences_exeptions(self):
         return ()
 
 
-
-class Ca(Element, PeriodII, GroupII):
-
+class Ca(Element, PeriodIV, GroupII):
     @property
     def atomic_number(self):
         return 20
@@ -116,24 +111,22 @@ class Ca(Element, PeriodII, GroupII):
 
     @property
     def max_isotope(self):
-        return 58
+        return 48
 
     @property
     def min_isotope(self):
-        return 34
+        return 40
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1)
+        return (0, 1), (2, 1),
 
     @property
     def valences_exeptions(self):
         return ()
 
 
-
-class Sr(Element, PeriodII, GroupII):
-
+class Sr(Element, PeriodV, GroupII):
     @property
     def atomic_number(self):
         return 38
@@ -152,24 +145,22 @@ class Sr(Element, PeriodII, GroupII):
 
     @property
     def max_isotope(self):
-        return 107
+        return 90
 
     @property
     def min_isotope(self):
-        return 73
+        return 82
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1)
+        return (0, 1), (2, 1),
 
     @property
     def valences_exeptions(self):
         return ()
 
 
-
-class Ba(Element, PeriodII, GroupII):
-
+class Ba(Element, PeriodVI, GroupII):
     @property
     def atomic_number(self):
         return 56
@@ -188,24 +179,22 @@ class Ba(Element, PeriodII, GroupII):
 
     @property
     def max_isotope(self):
-        return 153
+        return 138
 
     @property
     def min_isotope(self):
-        return 112
+        return 130
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1)
+        return (0, 1), (2, 1),
 
     @property
     def valences_exeptions(self):
         return ()
 
 
-
-class Ra(Element, PeriodII, GroupII):
-
+class Ra(Element, PeriodVII, GroupII):
     @property
     def atomic_number(self):
         return 88
@@ -224,15 +213,15 @@ class Ra(Element, PeriodII, GroupII):
 
     @property
     def max_isotope(self):
-        return 235
+        return 228
 
     @property
     def min_isotope(self):
-        return 201
+        return 223
 
     @property
     def common_valences(self):
-        return (0, 1), (2, 1)
+        return (0, 1), (2, 1),
 
     @property
     def valences_exeptions(self):
