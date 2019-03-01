@@ -133,3 +133,10 @@ class Element(ABC):
         """
         electronegativity of atom
         """
+
+    @property
+    @abstractmethod
+    def atomic_mass(self) -> float:
+        """
+        elements atomic mass
+        """
