@@ -23,11 +23,17 @@ from typing import Dict, List, Set, Hashable
 
 def clique(graph: Dict[Hashable, Set[Hashable]]) -> List[Hashable]:
     """ adopted from networkx algorithms.clique.find_cliques"""
-    clique_atoms = [None]
-    subgraph = set(graph)
-    candidates = set(graph)
-    roots = candidates - graph[max(subgraph, key=lambda x: len(graph[x]))]
+    subgraph = {x for x, y in graph.items() if y}  # skip isolated nodes
+    if not subgraph:
+        return  # empty or fully disconnected
+    elif len(subgraph) == 2:  # dimer
+        yield list(subgraph)
+        return
+
     stack = []
+    clique_atoms = [None]
+    candidates = subgraph.copy()
+    roots = candidates - graph[max(subgraph, key=lambda x: len(graph[x]))]
 
     while True:
         if roots:
@@ -41,7 +47,8 @@ def clique(graph: Dict[Hashable, Set[Hashable]]) -> List[Hashable]:
             else:
                 neighbors_candidates = candidates & neighbors
                 if neighbors_candidates:
-                    stack.append((subgraph, candidates, roots))
+                    if roots:
+                        stack.append((subgraph, candidates, roots))
                     clique_atoms.append(None)
                     subgraph = neighbors_subgraph
                     candidates = neighbors_candidates
@@ -68,7 +75,6 @@ class MCS:
                     k2 = (s2, o2)
                     p[k1].add(k2)
                     p[k2].add(k1)
-        print(next(clique(p)))
-
-
-
+        if not p:
+            return {}
+        print(list(clique(p)))
