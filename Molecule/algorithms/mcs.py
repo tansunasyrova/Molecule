@@ -17,27 +17,40 @@
 #  along with this program; if not, see <https://www.gnu.org/licenses/>.
 #
 from collections import defaultdict
-from itertools import product, permutations, combinations
+from itertools import product, combinations
 from typing import Dict, List, Set, Hashable
 
 
 def clique(graph: Dict[Hashable, Set[Hashable]]) -> List[Hashable]:
-    clique_atoms = set()
-    roots = sorted(graph, key=lambda x: len(graph[x]), reverse=True)
-    for i in roots:
-        neighbours = graph[i] - clique_atoms
-        if not neighbours:
-            continue
-        neighbours_root = neighbours.copy()
-        neighbours_root.add(i)
-        for j in neighbours:
-            n_n = set(graph[j])
-            n_n.add(j)
-            if not n_n.issuperset(neighbours_root):
-                break
+    """ adopted from networkx algorithms.clique.find_cliques"""
+    clique_atoms = [None]
+    subgraph = set(graph)
+    candidates = set(graph)
+    roots = candidates - graph[max(subgraph, key=lambda x: len(graph[x]))]
+    stack = []
+
+    while True:
+        if roots:
+            root = roots.pop()
+            candidates.remove(root)
+            clique_atoms[-1] = root
+            neighbors = graph[root]
+            neighbors_subgraph = subgraph & neighbors
+            if not neighbors_subgraph:
+                yield clique_atoms.copy()
+            else:
+                neighbors_candidates = candidates & neighbors
+                if neighbors_candidates:
+                    stack.append((subgraph, candidates, roots))
+                    clique_atoms.append(None)
+                    subgraph = neighbors_subgraph
+                    candidates = neighbors_candidates
+                    roots = candidates - graph[max(subgraph, key=lambda x: len(candidates & graph[x]))]
+        elif not stack:
+            return
         else:
-            yield list(neighbours_root)
-            clique_atoms.update(neighbours_root)
+            clique_atoms.pop()
+            subgraph, candidates, roots = stack.pop()
 
 
 class MCS:
