@@ -16,3 +16,21 @@
 #  You should have received a copy of the GNU Lesser General Public License
 #  along with this program; if not, see <https://www.gnu.org/licenses/>.
 #
+from .periods import *
+from .I import *
+from .II import *
+from .III import *
+from .IV import *
+from .V import *
+from .VI import *
+from .VIII import *
+from .IX import *
+from .X import *
+from .XI import *
+from .XII import *
+from .XIII import *
+from .XIV import *
+from .XV import *
+from .XVI import *
+from .XVII import *
+from .XVIII import *
