@@ -18,10 +18,10 @@
 #
 from collections import defaultdict
 from itertools import product, combinations
-from typing import Dict, List, Set, Hashable
+from typing import Dict, List, Set, Hashable, Iterator
 
 
-def clique(graph: Dict[Hashable, Set[Hashable]]) -> List[Hashable]:
+def clique(graph: Dict[Hashable, Set[Hashable]]) -> Iterator[List[Hashable]]:
     """ adopted from networkx algorithms.clique.find_cliques"""
     subgraph = {x for x, y in graph.items() if y}  # skip isolated nodes
     if not subgraph:
@@ -75,6 +75,9 @@ class MCS:
                     k2 = (s2, o2)
                     p[k1].add(k2)
                     p[k2].add(k1)
-        if not p:
-            return {}
-        print(list(clique(p)))
+        mapping = {}
+        for c in clique(p):
+            if len(c) > len(mapping) and all(self._bonds[s1].get(s2) == other._bonds[o1].get(o2)
+                                             for (s1, o1), (s2, o2) in combinations(c, 2)):
+                mapping = dict(c)
+        return mapping
