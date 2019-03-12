@@ -26,7 +26,6 @@ class GroupXVI:
 
 
 class Te(Element, PeriodIV, GroupXVI):
-
     @property
     def atomic_number(self):
         return 52

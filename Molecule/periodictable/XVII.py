@@ -26,7 +26,6 @@ class GroupXVII:
 
 
 class I(Element, PeriodIV, GroupXVII):
-
     @property
     def atomic_number(self):
         return 53
@@ -53,7 +52,7 @@ class I(Element, PeriodIV, GroupXVII):
 
     @property
     def common_valences(self):
-        return (0, 1), (1, 1), (3, 1), (5, 3), (7, 3)
+        return (1, 1), (3, 1), (5, 1), (7, 1)
 
     @property
     def valences_exeptions(self):
@@ -61,7 +60,6 @@ class I(Element, PeriodIV, GroupXVII):
 
 
 class At(Element, PeriodV, GroupXVII):
-
     @property
     def atomic_number(self):
         return 85
