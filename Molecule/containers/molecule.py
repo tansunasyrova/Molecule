@@ -17,7 +17,16 @@
 #  along with this program; if not, see <https://www.gnu.org/licenses/>.
 #
 from .graph import Graph
+from typing import List
 
 
 class Molecule(Graph):
-    pass
+    def check_valences(self) -> List[int]:
+        """
+        Checks atoms' valences
+        :return: numbers of atom with error
+        """
+        for (n, atom), bonds in zip(self._atoms.items(), self._bonds.values()):
+            valence = (sum([bonds.values()]), atom.multiplicity)
+            if valence in atom.common_valences:
+                continue
