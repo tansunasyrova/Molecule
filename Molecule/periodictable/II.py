@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
+#  Copyright 2019 Tagir Akhmetshin <tagirshin@gmail.com>
 #  This file is part of Molecule.
 #
 #  Molecule is free software; you can redistribute it and/or modify
@@ -54,7 +55,7 @@ class Be(Element, PeriodII, GroupII):
         return (0, 1), (2, 1)
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -88,7 +89,7 @@ class Mg(Element, PeriodIII, GroupII):
         return (0, 1), (2, 1)
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -122,7 +123,7 @@ class Ca(Element, PeriodIV, GroupII):
         return (0, 1), (2, 1)
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -156,7 +157,7 @@ class Sr(Element, PeriodV, GroupII):
         return (0, 1), (2, 1)
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -190,7 +191,7 @@ class Ba(Element, PeriodVI, GroupII):
         return (0, 1), (2, 1)
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
@@ -224,7 +225,7 @@ class Ra(Element, PeriodVII, GroupII):
         return (0, 1), (2, 1)
 
     @property
-    def valences_exeptions(self):
+    def valences_exceptions(self):
         return ()
 
 
