@@ -84,10 +84,19 @@ class Element(ABC):
 
     @propertied_exceptions
     def all_exceptions(self):
+        elements_classes = {x.__name__: x for x in Element.__subclasses__()}
+        elements_numbers = {}
         exceptions = set()
         for charge, multiplicity, env in self.valences_exceptions:
             for x in permutations(env):
-                exceptions.add((charge, multiplicity, x))
+                tmp = []
+                for bond, symbol in x:
+                    try:
+                        number = elements_numbers[symbol]
+                    except KeyError:
+                        number = elements_numbers[symbol] = elements_classes[symbol]().atomic_number
+                    tmp.append((bond, number))
+                exceptions.add((charge, multiplicity, tuple(tmp)))
         return frozenset(exceptions)
 
     @property

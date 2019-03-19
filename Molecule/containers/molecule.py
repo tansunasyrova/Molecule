@@ -26,7 +26,12 @@ class Molecule(Graph):
         Checks atoms' valences
         :return: numbers of atom with error
         """
+        errors = []
         for (n, atom), bonds in zip(self._atoms.items(), self._bonds.values()):
-            valence = (sum([bonds.values()]), atom.multiplicity)
+            valence = (sum(bonds.values()), atom.multiplicity)
             if valence in atom.common_valences:
                 continue
+            elif (atom.charge, atom.multiplicity,
+                  tuple((v, self._atoms[k].atomic_number) for k, v in bonds.items())) not in atom.all_exceptions:
+                errors.append(n)
+        return errors
