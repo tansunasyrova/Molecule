@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
+#  Copyright 2019 Dayana Bashirova <dayana.bashirova@yandex.ru>
 #  This file is part of Molecule.
 #
 #  Molecule is free software; you can redistribute it and/or modify
@@ -16,22 +17,14 @@
 #  You should have received a copy of the GNU Lesser General Public License
 #  along with this program; if not, see <https://www.gnu.org/licenses/>.
 #
-from .graph import Graph
-from typing import List
+from setuptools import setup
 
 
-class Molecule(Graph):
-    def check_valences(self) -> List[int]:
-        """
-        Checks atoms' valences
-        :return: numbers of atom with error
-        """
-        errors = []
-        for (n, atom), bonds in zip(self._atoms.items(), self._bonds.values()):
-            valence = (sum(bonds.values()), atom.multiplicity)
-            if valence in atom.common_valences:
-                continue
-            elif (atom.charge, atom.multiplicity,
-                  tuple((v, self._atoms[k].atomic_number) for k, v in bonds.items())) not in atom.all_exceptions:
-                errors.append(n)
-        return errors
+setup (
+    name='Molecule',
+    version='0.1.0',
+    packages=['Molecule', 'Molecule.algorithms', 'Molecule.containers', 'Molecule.periodictable'],
+    url='http://github.com/cimm-kzn/Molecule',
+    license='LGPLv3'
+
+)
