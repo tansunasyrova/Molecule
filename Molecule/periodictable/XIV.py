@@ -2,6 +2,7 @@
 #
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
 #  Copyright 2019 Dayana Bashirova <dayana.bashirova@yandex.ru>
+#  Copyright 2019 Tansu Nasyrova <tansu.nasyrova@gmail.com>
 #  This file is part of Molecule.
 #
 #  Molecule is free software; you can redistribute it and/or modify
@@ -23,6 +24,122 @@ from .periods import *
 
 class GroupXIV:
     pass
+
+
+class C(Element, PeriodII, GroupXIV):
+    @property
+    def atomic_number(self):
+        return 6
+
+    @property
+    def atomic_mass(self):
+        return 12.0107
+
+    @property
+    def electronegativity(self):
+        return 2.55
+
+    @property
+    def common_isotope(self):
+        return 12
+
+    @property
+    def max_isotope(self):
+        return 14
+
+    @property
+    def min_isotope(self):
+        return 12
+
+    @property
+    def common_valences(self):
+        return (4, 1),
+
+    @property
+    def valences_exceptions(self):
+        return (0, 2, (2, 'O')),
+
+
+class Si(Element, PeriodIII, GroupXIV):
+    @property
+    def atomic_number(self):
+        return 14
+
+    @property
+    def atomic_mass(self):
+        return 28.0855
+
+    @property
+    def electronegativity(self):
+        return 1.90
+
+    @property
+    def common_isotope(self):
+        return 28
+
+    @property
+    def max_isotope(self):
+        return 32
+
+    @property
+    def min_isotope(self):
+        return 28
+
+    @property
+    def common_valences(self):
+        return (4, 1),
+
+    @property
+    def valences_exceptions(self):
+        return ((0, 2, ((1, 'F'), (1, 'F'))),
+                (0, 2, ((1, 'Cl'), (1, 'Cl'))),
+                (0, 2, ((1, 'Br'), (1, 'Br'))),
+                (0, 2, (2, 'O')),
+                (-2, 6, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))))
+
+
+class Ge(Element, PeriodIV, GroupXIV):
+    @property
+    def atomic_number(self):
+        return 32
+
+    @property
+    def atomic_mass(self):
+        return 72.6308
+
+    @property
+    def electronegativity(self):
+        return 2.01
+
+    @property
+    def common_isotope(self):
+        return 74
+
+    @property
+    def max_isotope(self):
+        return 76
+
+    @property
+    def min_isotope(self):
+        return 68
+
+    @property
+    def common_valences(self):
+        return (4, 1),
+
+    @property
+    def valences_exceptions(self):
+        return ((0, 1, (1, 'Cl')),
+                (0, 2, (2, 'O')),
+                (0, 2, (2, 'S')),
+                (0, 2, (2, 'Se')),
+                (0, 2, (2, 'Te')),
+                (0, 2, ((1, 'F'), (1, 'F'))),
+                (0, 2, ((1, 'Cl'), (1, 'Cl'))),
+                (0, 2, ((1, 'Br'), (1, 'Br'))),
+                (0, 2, ((1, 'I'), (1, 'I'))),
+                (-2, 3, ((1, 'F'), (1, 'F'), (1, 'F'))), #	Cs[GeF3]
+                (-2, 6, ((1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'), (1, 'F'))))
 
 
 class Sn(Element, PeriodV, GroupXIV):
@@ -130,4 +247,4 @@ class Fl(Element, PeriodVII, GroupXIV):
         return ()
 
 
-__all__ = ['GroupXIV', 'Sn', 'Pb', 'Fl']
+__all__ = ['GroupXIV', 'C', 'Si', 'Ge', 'Sn', 'Pb', 'Fl']
