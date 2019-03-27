@@ -3,6 +3,7 @@
 #  Copyright 2019 Ramil Nugmanov <stsouko@live.ru>
 #  Copyright 2019 Dayana Bashirova <dayana.bashirova@yandex.ru>
 #  Copyright 2019 Tagir Akhmetshin <tagirshin@gmail.com>
+#  Copyright 2019 Tansu Nasyrova <tansu.nasyrova@gmail.com>
 #  This file is part of Molecule.
 #
 #  Molecule is free software; you can redistribute it and/or modify
@@ -133,6 +134,42 @@ class Se(Element, PeriodIV, GroupXVI):
         return ()
 
 
+class Te(Element, PeriodV, GroupXVI):
+    @property
+    def atomic_number(self):
+        return 52
+
+    @property
+    def atomic_mass(self):
+        return 127.6033
+
+    @property
+    def electronegativity(self):
+        return 2.1
+
+    @property
+    def common_isotope(self):
+        return 130
+
+    @property
+    def max_isotope(self):
+        return 132
+
+    @property
+    def min_isotope(self):
+        return 118
+
+    @property
+    def common_valences(self):
+        return (2, 1), (4, 3), (6, 3)
+
+    @property
+    def valences_exceptions(self):
+        return ((-1, 1, ((2, 'O'), (2, 'O'), (1, 'C'))),
+                (-1, 1, ((2, 'O'), (2, 'O'), (1, 'O'))),
+                (-1, 1, ((2, 'O'), (2, 'O'), (1, 'S'))))
+
+
 class Po(Element, PeriodVI, GroupXVI):
     @property
     def atomic_number(self):
@@ -206,4 +243,4 @@ class Lv(Element, PeriodVII, GroupXVI):
         return ()
 
 
-__all__ = ['GroupXVI', 'O', 'S', 'Se', 'Po', 'Lv']
+__all__ = ['GroupXVI', 'O', 'S', 'Se', 'Te', 'Po', 'Lv']
