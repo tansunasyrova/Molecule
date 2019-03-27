@@ -142,4 +142,3 @@ class Ga(Element, PeriodIV, GroupXIII):
 
 
 __all__ = ['GroupXIII', 'B', 'Al', 'Ga']
-
