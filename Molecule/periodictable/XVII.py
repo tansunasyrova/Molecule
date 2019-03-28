@@ -168,14 +168,11 @@ class I(Element, PeriodIV, GroupXVII):
 
     @property
     def common_valences(self):
-        return (1, 1), (3, 1), (5, 1), (7, 1)
+        return (1, 3), (3, 1), (5, 1), (7, 1),
 
     @property
     def valences_exceptions(self):
-        return ((0, 1, ((2, 'O'), (2, 'O'), (2, 'O'), (1, 'O'))),
-                (0, 1, ((2, 'O'), (2, 'O'), (1, 'O'))),
-                (0, 1, ((2, 'O'), (1, 'O'))),
-                (0, 1, ((1, 'O'), (1, 'F'), (1, 'Cl'))))
+        return ()
 
 
 class At(Element, PeriodV, GroupXVII):
@@ -205,14 +202,11 @@ class At(Element, PeriodV, GroupXVII):
 
     @property
     def common_valences(self):
-        return (0, 1), (1, 1), (3, 1), (5, 3), (7, 3)
+        return (1, 3), (3, 1), (5, 1), (7, 1),
 
     @property
     def valences_exceptions(self):
-        return ((0, 1, ((2, 'O'), (2, 'O'), (2, 'O'), (1, 'O'))),
-                (0, 1, ((2, 'O'), (2, 'O'), (1, 'O'))),
-                (0, 1, ((2, 'O'), (1, 'O'))),
-                (0, 1, ((1, 'O'), (1, 'F'), (1, 'Cl'))))
+        return ()
 
 
 class Ts(Element, PeriodVII, GroupXVII):
