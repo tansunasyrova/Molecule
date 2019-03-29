@@ -31,7 +31,4 @@ setup (
     python_requires='>=3.7.0',
     zip_safe=True,
     long_descripts=(Path(__file__).parent / 'README.md').open().read(),
-    install_requires=['pytest'],
-    package_data={'Molecule.files.dll':['LICENSE', 'README.md']},
-
 )
